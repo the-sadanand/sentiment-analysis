@@ -1,0 +1,185 @@
+
+.dashboard {
+  min-height: 100vh;
+  background-color: #111827;
+  padding: 1.5rem;
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f9fafb;
+  margin-bottom: 0.5rem;
+}
+
+.status-bar {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  color: #9ca3af;
+  font-size: 0.875rem;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.status-indicator.connected {
+  color: #10b981;
+}
+
+.status-indicator.disconnected {
+  color: #ef4444;
+}
+
+.status-indicator.connecting {
+  color: #f59e0b;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.metrics-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.metric-card {
+  background-color: #1f2937;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  border: 1px solid #374151;
+}
+
+.metric-label {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  margin-bottom: 0.5rem;
+}
+
+.metric-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f9fafb;
+}
+
+.metric-card.positive .metric-value {
+  color: #10b981;
+}
+
+.metric-card.negative .metric-value {
+  color: #ef4444;
+}
+
+.metric-card.neutral .metric-value {
+  color: #6b7280;
+}
+
+.charts-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.chart-container {
+  background-color: #1f2937;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  border: 1px solid #374151;
+}
+
+.chart-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #f9fafb;
+  margin-bottom: 1rem;
+}
+
+.trend-row {
+  background-color: #1f2937;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  border: 1px solid #374151;
+}
+
+.live-feed {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.feed-item {
+  padding: 0.75rem;
+  border-bottom: 1px solid #374151;
+  transition: background-color 0.2s;
+}
+
+.feed-item:hover {
+  background-color: #374151;
+}
+
+.feed-item:last-child {
+  border-bottom: none;
+}
+
+.feed-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.feed-sentiment {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-weight: 500;
+}
+
+.feed-sentiment.positive {
+  background-color: #065f46;
+  color: #10b981;
+}
+
+.feed-sentiment.negative {
+  background-color: #7f1d1d;
+  color: #ef4444;
+}
+
+.feed-sentiment.neutral {
+  background-color: #374151;
+  color: #9ca3af;
+}
+
+.feed-content {
+  color: #e5e7eb;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: #6b7280;
+}
+
+@media (max-width: 768px) {
+  .charts-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .metrics-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
